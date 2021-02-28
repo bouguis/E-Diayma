@@ -1,0 +1,33 @@
+{
+  "eDiaymaApp": {
+    "article": {
+      "home": {
+        "title": "Articles",
+        "createLabel": "Maak een nieuwe Article",
+        "createOrEditLabel": "Maak of wijzig een Article",
+        "notFound": "No Articles found"
+      },
+      "created": "A new Article is created with identifier {{ param }}",
+      "updated": "A Article is updated with identifier {{ param }}",
+      "deleted": "A Article is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Bent u zeker dat u Article {{ id }} wilt verwijderen?"
+      },
+      "detail": {
+        "title": "Article"
+      },
+      "refArticle": "Ref Article",
+      "designation": "Designation",
+      "description": "Description",
+      "prix": "Prix",
+      "quantiteStocke": "Quantite Stocke",
+      "image": "Image",
+      "origine": "Origine",
+      "disponiblite": "Disponiblite",
+      "selectionne": "Selectionne",
+      "ligneCommande": "Ligne Commande",
+      "categorie": "Categorie",
+      "commande": "Commande"
+    }
+  }
+}

@@ -1,0 +1,73 @@
+
+entity UserExtra {
+	localisation String
+}
+
+// A remplir
+entity Pays {
+	
+}
+
+entity Commande {
+	refCommande String,
+    etatCommande String,
+    destination String
+}
+
+entity Article {
+	refArticle String,
+	designation String,
+	description String,
+	prix BigDecimal,
+    quantiteStocke Long,
+    image String,
+    origine String,
+    disponiblite Boolean,
+    selectionne Boolean
+    
+}
+
+entity Categorie {
+	code String,
+    libelle String,
+    famille String
+}
+
+entity Panier {
+	codePanier String
+}
+
+entity LigneCommande {
+	quantiteCommande Integer,
+    prixTotal BigDecimal
+    
+}
+
+relationship OneToOne {
+	UserExtra{user} to User
+}
+
+relationship OneToMany {
+	UserExtra to Commande{userExtra},
+    Categorie to Article{categorie},
+    LigneCommande{panier} to Panier,
+    Commande{ligneCommande} to LigneCommande,
+    Article to LigneCommande{article}
+}
+
+relationship ManyToMany {
+	Commande{article} to Article{commande}
+}
+
+// Set pagination options
+paginate Panier, Categorie with infinite-scroll
+paginate UserExtra, Article, Pays, Commande with pagination
+
+// Use Data Transfer Objects (DTO)
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+
+// Set an angular suffix
+// angularSuffix * with mySuffix

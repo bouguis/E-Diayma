@@ -1,0 +1,33 @@
+{
+  "eDiaymaApp": {
+    "article": {
+      "home": {
+        "title": "Articles",
+        "createLabel": "Crear nuevo Article",
+        "createOrEditLabel": "Crear o editar Article",
+        "notFound": "Ningún Articles encontrado"
+      },
+      "created": "Un nuevo Article ha sido creado con el identificador {{ param }}",
+      "updated": "Un Article ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Article ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Article {{ id }}?"
+      },
+      "detail": {
+        "title": "Article"
+      },
+      "refArticle": "Ref Article",
+      "designation": "Designation",
+      "description": "Description",
+      "prix": "Prix",
+      "quantiteStocke": "Quantite Stocke",
+      "image": "Image",
+      "origine": "Origine",
+      "disponiblite": "Disponiblite",
+      "selectionne": "Selectionne",
+      "ligneCommande": "Ligne Commande",
+      "categorie": "Categorie",
+      "commande": "Commande"
+    }
+  }
+}

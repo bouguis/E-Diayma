@@ -51,6 +51,20 @@ public class CacheConfiguration {
             createCache(cm, sn.sntech.ediayma.domain.User.class.getName());
             createCache(cm, sn.sntech.ediayma.domain.Authority.class.getName());
             createCache(cm, sn.sntech.ediayma.domain.User.class.getName() + ".authorities");
+            createCache(cm, sn.sntech.ediayma.domain.UserExtra.class.getName());
+            createCache(cm, sn.sntech.ediayma.domain.UserExtra.class.getName() + ".commandes");
+            createCache(cm, sn.sntech.ediayma.domain.Pays.class.getName());
+            createCache(cm, sn.sntech.ediayma.domain.Commande.class.getName());
+            createCache(cm, sn.sntech.ediayma.domain.Commande.class.getName() + ".ligneCommandes");
+            createCache(cm, sn.sntech.ediayma.domain.Commande.class.getName() + ".articles");
+            createCache(cm, sn.sntech.ediayma.domain.Article.class.getName());
+            createCache(cm, sn.sntech.ediayma.domain.Article.class.getName() + ".ligneCommandes");
+            createCache(cm, sn.sntech.ediayma.domain.Article.class.getName() + ".commandes");
+            createCache(cm, sn.sntech.ediayma.domain.Categorie.class.getName());
+            createCache(cm, sn.sntech.ediayma.domain.Categorie.class.getName() + ".articles");
+            createCache(cm, sn.sntech.ediayma.domain.Panier.class.getName());
+            createCache(cm, sn.sntech.ediayma.domain.LigneCommande.class.getName());
+            createCache(cm, sn.sntech.ediayma.domain.LigneCommande.class.getName() + ".paniers");
             // jhipster-needle-ehcache-add-entry
         };
     }

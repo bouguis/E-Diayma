@@ -1,0 +1,93 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="eDiaymaApp.article.home.title">Articles</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-article" [routerLink]="['/article/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="eDiaymaApp.article.home.createLabel">
+            Create a new Article
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="articles?.length === 0">
+        <span jhiTranslate="eDiaymaApp.article.home.notFound">No articles found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="articles && articles.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="refArticle"><span jhiTranslate="eDiaymaApp.article.refArticle">Ref Article</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="designation"><span jhiTranslate="eDiaymaApp.article.designation">Designation</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="description"><span jhiTranslate="eDiaymaApp.article.description">Description</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="prix"><span jhiTranslate="eDiaymaApp.article.prix">Prix</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="quantiteStocke"><span jhiTranslate="eDiaymaApp.article.quantiteStocke">Quantite Stocke</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="image"><span jhiTranslate="eDiaymaApp.article.image">Image</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="origine"><span jhiTranslate="eDiaymaApp.article.origine">Origine</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="disponiblite"><span jhiTranslate="eDiaymaApp.article.disponiblite">Disponiblite</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="selectionne"><span jhiTranslate="eDiaymaApp.article.selectionne">Selectionne</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="categorieId"><span jhiTranslate="eDiaymaApp.article.categorie">Categorie</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let article of articles ;trackBy: trackId">
+                    <td><a [routerLink]="['/article', article.id, 'view']">{{ article.id }}</a></td>
+                    <td>{{ article.refArticle }}</td>
+                    <td>{{ article.designation }}</td>
+                    <td>{{ article.description }}</td>
+                    <td>{{ article.prix }}</td>
+                    <td>{{ article.quantiteStocke }}</td>
+                    <td>{{ article.image }}</td>
+                    <td>{{ article.origine }}</td>
+                    <td>{{ article.disponiblite }}</td>
+                    <td>{{ article.selectionne }}</td>
+                    <td>
+                        <div *ngIf="article.categorieId">
+                            <a [routerLink]="['/categorie', article.categorieId , 'view']" >{{ article.categorieId }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/article', article.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/article', article.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(article)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="articles && articles.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

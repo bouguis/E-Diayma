@@ -1,0 +1,27 @@
+{
+  "eDiaymaApp": {
+    "commande": {
+      "home": {
+        "title": "Commandes",
+        "createLabel": "Crear nuevo Commande",
+        "createOrEditLabel": "Crear o editar Commande",
+        "notFound": "Ningún Commandes encontrado"
+      },
+      "created": "Un nuevo Commande ha sido creado con el identificador {{ param }}",
+      "updated": "Un Commande ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Commande ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Commande {{ id }}?"
+      },
+      "detail": {
+        "title": "Commande"
+      },
+      "refCommande": "Ref Commande",
+      "etatCommande": "Etat Commande",
+      "destination": "Destination",
+      "ligneCommande": "Ligne Commande",
+      "article": "Article",
+      "userExtra": "User Extra"
+    }
+  }
+}

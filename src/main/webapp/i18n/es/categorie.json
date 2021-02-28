@@ -1,0 +1,25 @@
+{
+  "eDiaymaApp": {
+    "categorie": {
+      "home": {
+        "title": "Categories",
+        "createLabel": "Crear nuevo Categorie",
+        "createOrEditLabel": "Crear o editar Categorie",
+        "notFound": "Ningún Categories encontrado"
+      },
+      "created": "Un nuevo Categorie ha sido creado con el identificador {{ param }}",
+      "updated": "Un Categorie ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Categorie ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Categorie {{ id }}?"
+      },
+      "detail": {
+        "title": "Categorie"
+      },
+      "code": "Code",
+      "libelle": "Libelle",
+      "famille": "Famille",
+      "article": "Article"
+    }
+  }
+}

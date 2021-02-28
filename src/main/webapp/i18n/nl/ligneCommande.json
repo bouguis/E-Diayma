@@ -1,0 +1,26 @@
+{
+  "eDiaymaApp": {
+    "ligneCommande": {
+      "home": {
+        "title": "Ligne Commandes",
+        "createLabel": "Maak een nieuwe Ligne Commande",
+        "createOrEditLabel": "Maak of wijzig een Ligne Commande",
+        "notFound": "No Ligne Commandes found"
+      },
+      "created": "A new Ligne Commande is created with identifier {{ param }}",
+      "updated": "A Ligne Commande is updated with identifier {{ param }}",
+      "deleted": "A Ligne Commande is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Bent u zeker dat u Ligne Commande {{ id }} wilt verwijderen?"
+      },
+      "detail": {
+        "title": "Ligne Commande"
+      },
+      "quantiteCommande": "Quantite Commande",
+      "prixTotal": "Prix Total",
+      "panier": "Panier",
+      "commande": "Commande",
+      "article": "Article"
+    }
+  }
+}

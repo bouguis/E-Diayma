@@ -1,0 +1,46 @@
+{
+  "name": "LigneCommande",
+  "fields": [
+    {
+      "fieldName": "quantiteCommande",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "prixTotal",
+      "fieldType": "BigDecimal"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "panier",
+      "otherEntityRelationshipName": "ligneCommande",
+      "relationshipName": "panier"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "commande",
+      "otherEntityRelationshipName": "ligneCommande",
+      "relationshipName": "commande",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "article",
+      "otherEntityRelationshipName": "ligneCommande",
+      "relationshipName": "article",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210228143019",
+  "entityTableName": "ligne_commande",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

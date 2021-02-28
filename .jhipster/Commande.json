@@ -1,0 +1,51 @@
+{
+  "name": "Commande",
+  "fields": [
+    {
+      "fieldName": "refCommande",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "etatCommande",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "destination",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "ligneCommande",
+      "otherEntityRelationshipName": "commande",
+      "relationshipName": "ligneCommande"
+    },
+    {
+      "relationshipType": "many-to-many",
+      "otherEntityName": "article",
+      "otherEntityRelationshipName": "commande",
+      "relationshipName": "article",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "userExtra",
+      "otherEntityRelationshipName": "commande",
+      "relationshipName": "userExtra",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210228142619",
+  "entityTableName": "commande",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

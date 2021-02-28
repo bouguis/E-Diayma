@@ -1,0 +1,68 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="article">
+            <h2><span jhiTranslate="eDiaymaApp.article.detail.title">Article</span> {{ article.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="eDiaymaApp.article.refArticle">Ref Article</span></dt>
+                <dd>
+                    <span>{{ article.refArticle }}</span>
+                </dd>
+                <dt><span jhiTranslate="eDiaymaApp.article.designation">Designation</span></dt>
+                <dd>
+                    <span>{{ article.designation }}</span>
+                </dd>
+                <dt><span jhiTranslate="eDiaymaApp.article.description">Description</span></dt>
+                <dd>
+                    <span>{{ article.description }}</span>
+                </dd>
+                <dt><span jhiTranslate="eDiaymaApp.article.prix">Prix</span></dt>
+                <dd>
+                    <span>{{ article.prix }}</span>
+                </dd>
+                <dt><span jhiTranslate="eDiaymaApp.article.quantiteStocke">Quantite Stocke</span></dt>
+                <dd>
+                    <span>{{ article.quantiteStocke }}</span>
+                </dd>
+                <dt><span jhiTranslate="eDiaymaApp.article.image">Image</span></dt>
+                <dd>
+                    <span>{{ article.image }}</span>
+                </dd>
+                <dt><span jhiTranslate="eDiaymaApp.article.origine">Origine</span></dt>
+                <dd>
+                    <span>{{ article.origine }}</span>
+                </dd>
+                <dt><span jhiTranslate="eDiaymaApp.article.disponiblite">Disponiblite</span></dt>
+                <dd>
+                    <span>{{ article.disponiblite }}</span>
+                </dd>
+                <dt><span jhiTranslate="eDiaymaApp.article.selectionne">Selectionne</span></dt>
+                <dd>
+                    <span>{{ article.selectionne }}</span>
+                </dd>
+                <dt><span jhiTranslate="eDiaymaApp.article.categorie">Categorie</span></dt>
+                <dd>
+                    <div *ngIf="article.categorieId">
+                        <a [routerLink]="['/categorie', article.categorieId, 'view']">{{ article.categorieId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/article', article.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

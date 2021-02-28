@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="ligneCommande">
+            <h2><span jhiTranslate="eDiaymaApp.ligneCommande.detail.title">Ligne Commande</span> {{ ligneCommande.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="eDiaymaApp.ligneCommande.quantiteCommande">Quantite Commande</span></dt>
+                <dd>
+                    <span>{{ ligneCommande.quantiteCommande }}</span>
+                </dd>
+                <dt><span jhiTranslate="eDiaymaApp.ligneCommande.prixTotal">Prix Total</span></dt>
+                <dd>
+                    <span>{{ ligneCommande.prixTotal }}</span>
+                </dd>
+                <dt><span jhiTranslate="eDiaymaApp.ligneCommande.commande">Commande</span></dt>
+                <dd>
+                    <div *ngIf="ligneCommande.commandeId">
+                        <a [routerLink]="['/commande', ligneCommande.commandeId, 'view']">{{ ligneCommande.commandeId }}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="eDiaymaApp.ligneCommande.article">Article</span></dt>
+                <dd>
+                    <div *ngIf="ligneCommande.articleId">
+                        <a [routerLink]="['/article', ligneCommande.articleId, 'view']">{{ ligneCommande.articleId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/ligne-commande', ligneCommande.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

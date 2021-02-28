@@ -1,0 +1,24 @@
+{
+  "eDiaymaApp": {
+    "userExtra": {
+      "home": {
+        "title": "User Extras",
+        "createLabel": "Maak een nieuwe User Extra",
+        "createOrEditLabel": "Maak of wijzig een User Extra",
+        "notFound": "No User Extras found"
+      },
+      "created": "A new User Extra is created with identifier {{ param }}",
+      "updated": "A User Extra is updated with identifier {{ param }}",
+      "deleted": "A User Extra is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Bent u zeker dat u User Extra {{ id }} wilt verwijderen?"
+      },
+      "detail": {
+        "title": "User Extra"
+      },
+      "localisation": "Localisation",
+      "user": "User",
+      "commande": "Commande"
+    }
+  }
+}

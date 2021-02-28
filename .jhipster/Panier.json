@@ -1,0 +1,29 @@
+{
+  "name": "Panier",
+  "fields": [
+    {
+      "fieldName": "codePanier",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "ligneCommande",
+      "otherEntityRelationshipName": "panier",
+      "relationshipName": "ligneCommande",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20210228142919",
+  "entityTableName": "panier",
+  "dto": "mapstruct",
+  "pagination": "infinite-scroll",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

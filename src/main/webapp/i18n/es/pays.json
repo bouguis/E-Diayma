@@ -1,0 +1,21 @@
+{
+  "eDiaymaApp": {
+    "pays": {
+      "home": {
+        "title": "Pays",
+        "createLabel": "Crear nuevo Pays",
+        "createOrEditLabel": "Crear o editar Pays",
+        "notFound": "Ningún Pays encontrado"
+      },
+      "created": "Un nuevo Pays ha sido creado con el identificador {{ param }}",
+      "updated": "Un Pays ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Pays ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Pays {{ id }}?"
+      },
+      "detail": {
+        "title": "Pays"
+      }
+    }
+  }
+}
